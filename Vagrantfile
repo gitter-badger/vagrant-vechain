@@ -4,8 +4,8 @@
 Vagrant.configure("2") do |config|
   config.vm.define "thor" do |thor|
     thor.vm.box = "ubuntu/trusty64"
+    thor.vm.network "private_network", ip: "192.168.99.2"
     thor.vm.network "forwarded_port", guest: 8669, host: 8669
-
     thor.vm.provider "virtualbox" do |vb|
       # Display the VirtualBox GUI when booting the machine
       vb.gui = false
@@ -18,9 +18,10 @@ Vagrant.configure("2") do |config|
     ./vechain-testnet.sh
     SCRIPT
     
-    thor.vm.provision "shell", path: "install_dependencies.sh"
-    thor.vm.provision "shell", path: "install_go.sh", privileged: false
-    thor.vm.provision "shell", path: "install.sh", privileged: false
-    thor.vm.provision "shell", inline: $script
+    thor.vm.provision "shell", path: "scripts/install_dependencies.sh"
+    thor.vm.provision "shell", path: "scripts/install_go.sh", privileged: false
+    thor.vm.provision "shell", path: "scripts/install.sh", privileged: false
+    # Autostart script, the provisoner bellow will call the above script to start syncing blocks on the testnet
+    # thor.vm.provision "shell", inline: $script
   end
 end

@@ -10,4 +10,12 @@
 
 ## Thor Installation
 
-Thor is currently being installed with the `go get` method. A testnet script is created during the build process and is being launched from the vagrantfile. This allows the developer to launch the thor testnet locally with `vagrant up`. Since the terminal session will automatically connect to the thor blockchain and start syncing blocks you will need to open another terminal windows in your local environment to begin interacting with the api.
+Thor is currently being installed with the `go get` method. Once the vagrant box has completed
+
+## Thor API
+
+Once your Thor node is running you can checkout the [thor repo](https://github.com/vechain/thor) or the [wiki](https://github.com/vechain/thor/wiki) for more information on the scripts availible in this project.
+
+## Vagrant Networking
+
+The virtual machine configured by vagrant is currently hard coded with an IP for virtualbox. A multi provider or docker build should make use of an environment variable for reconfigureble ip address. In the install script the IP address is used to tell thor where to server the API. 

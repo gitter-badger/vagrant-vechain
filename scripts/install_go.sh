@@ -12,6 +12,8 @@ sudo tar -C /usr/local -xzf /home/vagrant/go.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/home/vagrant/go
 export PATH=$PATH:$GOPATH/bin
-echo "export PATH=$PATH:/usr/local/go/bin" >> /home/vagrant/.bash_profile
-echo "export GOPATH=/home/vagrant/go" >> /home/vagrant/.bash_profile
-echo "export PATH=$PATH:$GOPATH/bin" >> /home/vagrant/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> /home/vagrant/.bashrc
+echo "export GOPATH=/home/vagrant/go" >> /home/vagrant/.bashrc
+echo "export PATH=$PATH:$GOPATH/bin" >> /home/vagrant/.bashrc
+
+source ~/.bashrc
