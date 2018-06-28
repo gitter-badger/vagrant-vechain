@@ -1,5 +1,7 @@
 # NOTE: Still experimental, this is not secure and should not be used in production
 
+[![Join the chat at https://gitter.im/vagrant-vechain/Lobby](https://badges.gitter.im/vagrant-vechain/Lobby.svg)](https://gitter.im/vagrant-vechain/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Vagrant VeChain thor
 
  This repo will install the dependencies and software for a VeChain Thor node. It is currently configured to connect to the test network and begin syncing blocks by running /root/vehcain-testnet.sh
